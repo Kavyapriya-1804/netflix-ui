@@ -13,7 +13,9 @@ export default function Register() {
     setEmail(emailRef.current.value);
   };
   const handleFinish = () => {
+    // let pass = password
     setPassword(passwordRef.current.value);
+    console.log(password);
   };
   return (
     <div className="register">

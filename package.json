@@ -8,6 +8,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.11.0",
+    "flowbite-react": "^0.12.9",
     "hls.js": "^1.6.11",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
