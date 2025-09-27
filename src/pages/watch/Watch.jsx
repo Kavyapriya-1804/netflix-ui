@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import videojs from "video.js";
 import Hls from "hls.js";
 import "video.js/dist/video-js.css";
@@ -9,6 +10,17 @@ import toast from "react-hot-toast";
 export default function Watch({src}) {
   const videoRef = useRef(null);
   const playerRef = useRef(null);
+  const { videoId } = useParams();
+  const navigate = useNavigate();
+  
+  // Use dynamic video ID from URL params if available, otherwise use the prop src
+  const videoSrc = videoId ? 
+    `http://localhost:8080/api/v1/videos/${videoId}/master.m3u8` : 
+    src;
+
+  const handleBack = () => {
+    navigate("/");
+  };
 
   useEffect(() => {
     //for init
@@ -23,13 +35,13 @@ export default function Watch({src}) {
 
     if (Hls.isSupported()) {
       const hls = new Hls();
-      hls.loadSource(src);
+      hls.loadSource(videoSrc);
       hls.attachMedia(videoRef.current);
       hls.on(Hls.Events.MANIFEST_PARSED, () => {
         videoRef.current.play();
       });
     } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
-      videoRef.current.src = src;
+      videoRef.current.src = videoSrc;
       videoRef.current.addEventListener("canplay", () => {
         videoRef.current.play();
       });
@@ -37,12 +49,12 @@ export default function Watch({src}) {
       console.log("video format not supportted");
       toast.error("Video format not supporteds");
     }
-  }, [src]);
+  }, [videoSrc]);
 
   return (
     <div className="watch">
-      <div className="back">
-      <MdArrowBack />
+      <div className="back" onClick={handleBack} style={{cursor: 'pointer'}}>
+        <MdArrowBack />
         Home
       </div>
       <div data-vjs-player>

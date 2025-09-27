@@ -3,16 +3,18 @@
   height: 100vh;
   background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.6) 80%,
       rgba(0, 0, 0, 1) 100%
     ),
-    url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f562aaf4-5dbb-4603-a32b-6ef6c2230136/dh0w8qv-9d8ee6b2-b41a-4681-ab9b-8a227560dc75.jpg/v1/fill/w_1192,h_670,q_70,strp/the_netflix_login_background__canada__2024___by_logofeveryt_dh0w8qv-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZjU2MmFhZjQtNWRiYi00NjAzLWEzMmItNmVmNmMyMjMwMTM2XC9kaDB3OHF2LTlkOGVlNmIyLWI0MWEtNDY4MS1hYjliLThhMjI3NTYwZGM3NS5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.LOYKSxIDqfPwWHR0SSJ-ugGQ6bECF0yO6Cmc0F26CQs");
+    url("https://assets.nflxext.com/ffe/siteui/vlv3/fcfcd5ee-d40a-43d7-bebc-9e9aae7f7798/web/IN-en-20250922-TRIFECTA-perspective_4fd75b17-c493-446a-a3de-3d1ab753c304_large.jpg");
   background-size: cover;
   position: relative;
 
   .top {
     .wrapper {
-      padding: 20px 50px;
+      padding: 20px 180px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -36,36 +38,318 @@
     color: white;
 
     form {
-      width: 300px;
-      height: 300px;
-      padding: 30px;
+      width: 28%;
+      padding: 50px 70px;
       border-radius: 5px;
-      background-color: var(--main-color);
+      background-color: rgba(11, 11, 11, 0.8);
       display: flex;
       flex-direction: column;
       justify-content: space-around;
 
-      input {
-        height: 40px;
-        border-radius: 5px;
-        background-color: gray;
-        color: white;
-        padding-left: 10px;
+      h1{
+        margin-bottom: 30px;
+      }
 
-        &::placeholder {
-          color: lightgray;
+      .formInputGroup{
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .form-label-group {
+            position: relative;
+            margin-bottom: 1rem;
+            
+            label {
+              padding: 0.75rem;
+              position: absolute;
+              font-weight: 300;
+              top: 0px;
+              left: 0px;
+              display: block;
+              width: 100%;
+              margin-bottom: 0;
+              line-height: 1.5;
+              color: #737373;
+              pointer-events: none;
+              cursor: text;
+              border: 1px solid transparent;
+              border-radius: .25rem;
+              transition: all .1s ease-in-out;
+            }
+
+            input::-webkit-input-placeholder {
+              color: transparent;
+            }
+            
+            input::-moz-placeholder {
+              color: transparent;
+            }
+            
+            input:-ms-input-placeholder {
+              color: transparent;
+            }
+            
+            input::-ms-input-placeholder {
+              color: transparent;
+            }
+            
+            input::placeholder {
+              color: transparent;
+            }
+            
+            input:not(:-moz-placeholder-shown) {
+              padding-top: 1.25rem;
+              padding-bottom: .25rem;
+            }
+            
+            input:not(:-ms-input-placeholder) {
+              padding-top: 1.25rem;
+              padding-bottom: .25rem;
+            }
+            
+            input:not(:placeholder-shown) {
+              padding-top: 1.25rem;
+              padding-bottom: .25rem;
+            }
+            
+            input:not(:-moz-placeholder-shown) ~ label {
+              padding-top: .25rem;
+              padding-bottom: .25rem;
+              font-size: 11px;
+              color: #b3b3b3 !important;
+            }
+            
+            input:not(:-ms-input-placeholder) ~ label {
+              padding-top: .25rem;
+              padding-bottom: .25rem;
+              font-size: 11px;
+              color: #b3b3b3 !important;
+            }
+            
+            input:not(:placeholder-shown) ~ label {
+              padding-top: .25rem;
+              padding-bottom: .25rem;
+              font-size: 11px;
+              color: #b3b3b3 !important;
+            }
+
+            input:focus {
+              padding-top: 1.25rem;
+              padding-bottom: .25rem;
+            }
+            
+            input:focus ~ label {
+              padding-top: .25rem;
+              padding-bottom: .25rem;
+              font-size: 11px;
+              color: #b3b3b3 !important;
+            }
+            
+            input:-webkit-autofill ~ label {
+              padding-top: .25rem;
+              padding-bottom: .25rem;
+              font-size: 11px;
+              color: #b3b3b3 !important;
+            }
+          }
+
+          .password-group {
+            position: relative;
+
+            .password-toggle {
+              position: absolute;
+              right: 8px;
+              top: 50%;
+              transform: translateY(-50%);
+              background: transparent;
+              border: none;
+              color: #b3b3b3;
+              cursor: pointer;
+              padding: 6px;
+              z-index: 10;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              width: 32px;
+              height: 32px;
+              transition: all 0.2s ease;
+
+              &:hover {
+                color: white;
+                background-color: rgba(255, 255, 255, 0.1);
+              }
+
+              svg {
+                font-size: 16px;
+              }
+            }
+          }
+
+          .divider { 
+            text-align: center;
+          }
+
+          input {
+            height: 50px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: rgba(45, 50, 61, 0.5);
+            color: white;
+            padding-left: 10px;
+            border: 1px solid rgb(87, 97, 118);
+
+          &::placeholder {
+            color: lightgray;
+          }
+
+          &:focus{
+            outline: none;
+            border: 1px solid white;
+            box-shadow: 0 0 0 1px white;
+          }
+
+          // Prevent autofill white background
+          &:-webkit-autofill,
+          &:-webkit-autofill:hover,
+          &:-webkit-autofill:focus,
+          &:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px rgba(45, 50, 61, 0.5) inset !important;
+            -webkit-text-fill-color: white !important;
+            background-color: rgba(45, 50, 61, 0.5) !important;
+            transition: background-color 5000s ease-in-out 0s;
+          }
+
+          // Firefox autofill
+          &:-moz-autofill {
+            background-color: rgba(45, 50, 61, 0.5) !important;
+            color: white !important;
+            box-shadow: 0 0 0 30px rgba(45, 50, 61, 0.5) inset !important;
+          }
+        }
+
+        button {
+          height: 40px;
+          border-radius: 5px;
+          color: white;
+          border: none;
+          font-size: 15px;
+          font-weight: 800;
+          cursor: pointer;
+
+          &.loginButton{
+             background-color: red;
+          }
+
+          &.signInCodeButton {
+            background-color: rgba(145, 145, 145, 0.4);
+          }
+        }
+
+        .forgotPassword{
+          text-align: center;
+          color: white;
+          background: none;
+          border: none;
+          cursor: pointer;
+          text-decoration: underline;
+          font-size: inherit;
+          font-family: inherit;
+          font-weight: 300;
+          
+          &:hover {
+            color: #ccc;
+          }
+        }
+
+        .rememberMe {
+          display: flex;
+          align-items: center;
+          margin-top: 10px;
+
+          .customCheckbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            .rememberCheckbox {
+              display: none; // Hide default checkbox
+            }
+
+            .checkboxLabel {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              color: white;
+              font-size: 16px;
+              cursor: pointer;
+              user-select: none;
+
+              .checkmark {
+                width: 16px;
+                height: 16px;
+                border: 1px solid #737373;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 2px;
+                transition: all 0.2s ease;
+                position: relative;
+
+                &::after {
+                  content: '';
+                  width: 4px;
+                  height: 8px;
+                  border: solid white;
+                  border-width: 0 1px 1px 0;
+                  transform: rotate(45deg);
+                  opacity: 0;
+                  transition: opacity 0.2s ease;
+                }
+              }
+            }
+
+            .rememberCheckbox:checked + .checkboxLabel .checkmark {
+              background-color: white;
+              border-color: white;
+
+              &::after {
+                opacity: 1;
+                border-color: black;
+              }
+            }
+
+            &:hover .checkboxLabel .checkmark {
+              border-color: white;
+            }
+          }
+        }
+
+       
+      }
+
+      .newToNetflix {
+        margin-top: 14px;
+        color: rgba(255,255,255,0.7);
+        .signUpLink{
+          margin-left: -5px;
+          &:hover{
+            cursor: pointer;
+            text-decoration: underline;
+          }
         }
       }
 
-      button {
-        height: 40px;
-        border-radius: 5px;
-        background-color: red;
-        color: white;
-        border: none;
-        font-size: 18px;
-        font-weight: 500;
-        cursor: pointer;
+      .captchaDesc{
+        margin-top: 10px;
+        color: rgba(255,255,255,0.5);
+        font-size: 12px;
+        a {
+          margin-top: 5px;
+          display: block;
+          color: #448ef4;
+        }
       }
 
       span {

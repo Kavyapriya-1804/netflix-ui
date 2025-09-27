@@ -31,6 +31,26 @@
         margin-right: 20px;
         cursor: pointer;
       }
+
+      .nav-link {
+        text-decoration: none;
+        color: white;
+        margin-right: 20px;
+        cursor: pointer;
+        
+        &:hover {
+          color: #ccc;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        
+        img {
+          cursor: pointer;
+        }
+      }
     }
 
     .right {
