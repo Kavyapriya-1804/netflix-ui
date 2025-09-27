@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import videoLogo from "../../assets/video-posting.png";
 import {
   Button,
@@ -22,6 +23,7 @@ function VideoUpload() {
   const [progress, setProgress] = useState(0);
   const [uploading, setUploading] = useState(false);
   const [message, setMessage] = useState("");
+  // const navigate = useNavigate();
 
   function handleFileChange(event) {
     console.log(event.target.files[0]);
