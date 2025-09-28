@@ -5,39 +5,45 @@ import Home from "./pages/home/Home";
 import Register from "./pages/register/Register";
 import Watch from "./pages/watch/Watch";
 import Login from "./pages/login/Login";
+import VideoPlayer from "./VideoPlayer";
 
 const App = () => {
-  const videoId = "5fb04519-1332-472e-ba42-51a20ea77dfb";
+  const videoId = "123-454-235";
   
   return (
-    <Router>
-      <div className="app">
-        <Routes>
-          {/* Home route */}
-          <Route path="/" element={<Home />} />
+    // <Router>
+    //   <div className="app">
+    //     <Routes>
+    //       {/* Home route */}
+    //       <Route path="/" element={<Home />} />
           
-          {/* Authentication routes */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+    //       {/* Authentication routes */}
+    //       <Route path="/login" element={<Login />} />
+    //       <Route path="/register" element={<Register />} />
           
-          {/* Watch video route with dynamic ID */}
-          <Route 
-            path="/watch/:videoId?" 
-            element={<Watch src={`http://localhost:8080/api/v1/videos/${videoId}/master.m3u8`} />} 
-          />
+    //       {/* Watch video route with dynamic ID */}
+    //       <Route 
+    //         path="/watch/:videoId?" 
+    //         element={<Watch src={`http://localhost:8080/api/v1/videos/${videoId}/master.m3u8`} />} 
+    //       />
           
-          {/* Video upload route */}
-          <Route path="/upload" element={
-            <div className="w-full">
-              <VideoUpload />
-            </div>
-          } />
+    //       {/* Video upload route */}
+    //       <Route path="/upload" element={
+    //         <div className="w-full">
+    //           <VideoUpload />
+    //         </div>
+    //       } />
           
-          {/* Catch all route - redirect to home */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </div>
-    </Router>
+    //       {/* Catch all route - redirect to home */}
+    //       <Route path="*" element={<Navigate to="/" replace />} />
+    //     </Routes>
+    //   </div>
+    // </Router>
+    <div>
+
+    <VideoPlayer videoId={videoId} />
+      
+    </div>
   );
 };
 
